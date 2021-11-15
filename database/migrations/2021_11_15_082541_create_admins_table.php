@@ -22,7 +22,9 @@ class CreateAdminsTable extends Migration
             $table->date('date_of_birth');
             $table->enum('sex', ['Male', 'Female']);
             $table->enum('national_status', ['Citizen', 'Foreigner']);
-            $table->unsignedBigInteger('national_id');          
+            $table->unsignedBigInteger('national_id'); 
+            $table->mediumInteger('admin_role');
+            $table->foreign('admin_role')->references('id')->on('admin_roles');    
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -26,6 +26,7 @@ class AdminsTableSeeder extends Seeder
             'sex' => 'Male',
             'national_status' => 'Citizen',
             'national_id' => '11223344',
+            'admin_role' => '1',
             'password' => bcrypt('password'),
         ]);
     }

@@ -10,4 +10,8 @@ class AdminRoles extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    public function admin(){
+        return $this->belongsTo(Admin::class);
+    }
 }

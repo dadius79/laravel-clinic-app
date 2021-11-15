@@ -12,25 +12,37 @@ class AdminRolesSeeder extends Seeder
      *
      * @return void
      */
+
+    protected $roles = [
+        [
+            'role' => 'Manager',
+        ],
+        [
+            'role' => 'Receptionist',
+        ],
+        [
+            'role' => 'Doctor',
+        ],
+        [
+            'role' => 'Pharmacist',
+        ],
+        [
+            'role' => 'Cashier',
+        ], 
+    ];
+
     public function run()
     {
-        //
-        AdminRoles::create(
-            [
-                'name' => 'Receptionist',
-            ],
-            [
-                'name' => 'Doctor',
-            ],
-            [
-                'name' => 'Pharmacist',
-            ],
-            [
-                'name' => 'Cashier',
-            ],
-            [
-                'name' => 'Manager'
-            ],
-        );
+        foreach($this->roles as $index => $role){
+
+            $result = AdminRoles::create($role);
+            if(!$result){
+                $this->command->info("Insert failed at record $index.");
+                return;
+            }
+
+        }
+
+        $this->command->info('Inserted '.count($this->roles).' records');
     }
 }

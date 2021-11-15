@@ -176,7 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         //Added By DOS
-        Spatie\Permission\PermissionServiceProvider::class,
+        //Spatie\Permission\PermissionServiceProvider::class,
 
     ],
 
