@@ -62,4 +62,12 @@ class LoginController extends BaseController
         return $this->sendResponse($success, 'User created successfully.');
 
     }//end function signup
+
+    public function logout(Request $request){
+        auth()->user()->tokens()->delete();
+
+        $success = [];
+
+        return $this->sendResponse($success, 'User logged out.');        
+    }
 }

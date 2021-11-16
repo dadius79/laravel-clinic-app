@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function(){
     Route::post('login', 'App\Http\Controllers\Admin\LoginController@login');
-    Route::get('logout', 'App\Http\Controllers\Admin\LoginController@logout');
 
     Route::middleware('auth:sanctum')->group(function() {
         Route::post('signup', 'App\Http\Controllers\Admin\LoginController@signup');
+        Route::post('logout', 'App\Http\Controllers\Admin\LoginController@logout');
     });
 });
 
