@@ -42,8 +42,8 @@ class LoginController extends BaseController
             'username' => 'required|string|min:6',
             'email' => 'required|string|unique:App\Models\Admin,email',
             'date_of_birth' => 'required|date',
-            'sex' => 'required',
-            'national_status' => 'required',
+            'sex' => 'required|in:Male,Female',
+            'national_status' => 'required|in:Citizen,Foreigner',
             'national_id' => 'required|integer|unique:App\Models\Admin,national_id|min:8',
             'admin_role' => 'required|integer',
             'password' => 'required|min:6|max:10'
