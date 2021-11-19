@@ -20,6 +20,14 @@ Route::prefix('admin')->group(function(){
     Route::middleware('auth:sanctum')->group(function() {
         Route::post('signup', 'App\Http\Controllers\Admin\LoginController@signup');
         Route::post('logout', 'App\Http\Controllers\Admin\LoginController@logout');
+
+        Route::prefix('menu')->group(function(){
+            Route::get('/', 'App\Http\Controllers\Admin\MenuController@index');
+            Route::post('/add', 'App\Http\Controllers\Admin\MenuController@store');
+            Route::post('/edit', 'App\Http\Controllers\Admin\MenuController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\MenuController@delete');
+        });
+
     });
 });
 
