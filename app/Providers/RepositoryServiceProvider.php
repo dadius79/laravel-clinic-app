@@ -5,6 +5,10 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Contracts\MenuContract;
 use App\Repositories\MenuRepository;
+use App\Contracts\SubMenuContract;
+use App\Repositories\SubMenuRepository;
+use App\Contracts\OptionMenuContract;
+use App\Repositories\OptionMenuRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
