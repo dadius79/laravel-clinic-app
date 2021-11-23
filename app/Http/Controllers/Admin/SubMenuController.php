@@ -17,7 +17,7 @@ class SubMenuController extends BaseController
 
     public function index(){
         $submenu = $this->subMenuRepository->listSubMenu();
-        return $this->sendResponse($menu, 'Sub Menu Fetched.');
+        return $this->sendResponse($submenu, 'Sub Menu Fetched.');
     }
 
     public function store(Request $request){
@@ -47,10 +47,10 @@ class SubMenuController extends BaseController
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'menu_id' => 'required|integer',
-            'name' => 'required|string',
-            'slug' => 'required|string',
-            'url' => 'required|string'
+            'menu_id' => 'integer',
+            'name' => 'string',
+            'slug' => 'string',
+            'url' => 'string'
         ]);
 
         $params = $request->all();

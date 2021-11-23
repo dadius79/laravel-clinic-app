@@ -36,6 +36,8 @@ class SubMenuRepository extends BaseRepository implements SubMenuContract
             $submenu = new SubMenu($collection->all());
 
             $submenu->save();
+
+            return $submenu;
         } catch (QueryException $exception) {
             throw new InvalidArgumentException($exception->getMessage());
         }

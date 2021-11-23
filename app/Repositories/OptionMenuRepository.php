@@ -35,6 +35,8 @@ class OptionMenuRepository extends BaseRepository implements OptionMenuContract
             $optionmenu = new OptionMenu($collection->all());
 
             $optionmenu->save();
+
+            return $optionmenu;
         } catch (QueryException $exception) {
             throw new InvalidArgumentException($exception->getMessage());
         }
@@ -51,7 +53,7 @@ class OptionMenuRepository extends BaseRepository implements OptionMenuContract
     }
 
     public function deleteOptionMenu($id){
-        $optionmenu = $this->findSubMenuById($id);
+        $optionmenu = $this->findOptionMenuById($id);
 
         $optionmenu->delete();
 

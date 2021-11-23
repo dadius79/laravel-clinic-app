@@ -46,10 +46,10 @@ class OptionMenuController extends BaseController
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'sub_menu_id' => 'required|integer',
-            'name' => 'required|string',
-            'slug' => 'required|string',
-            'url' => 'required|string'
+            'sub_menu_id' => 'integer',
+            'name' => 'string',
+            'slug' => 'string',
+            'url' => 'string'
         ]);
 
         $params = $request->all();
