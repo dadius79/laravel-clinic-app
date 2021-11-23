@@ -46,6 +46,7 @@ class LoginController extends BaseController
             'national_status' => 'required|in:Citizen,Foreigner',
             'national_id' => 'required|integer|unique:App\Models\Admin,national_id|min:8',
             'admin_role' => 'required|integer',
+            'active' => 'required|boolean',
             'password' => 'required|min:6|max:10'
         ]);
 

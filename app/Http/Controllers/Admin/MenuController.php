@@ -26,7 +26,8 @@ class MenuController extends BaseController
         $this->validate($request, [
             'name' => 'required|string',
             'slug' => 'required|string',
-            'url' => 'required|string'
+            'url' => 'required|string',
+            'active' => 'required|boolean'
         ]);
 
         $params = $request->all();
@@ -48,9 +49,10 @@ class MenuController extends BaseController
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|string',
-            'slug' => 'required|string',
-            'url' => 'required|string'
+            'name' => 'string',
+            'slug' => 'string',
+            'url' => 'string',
+            'active' => 'boolean'
         ]);
 
         $params = $request->all();

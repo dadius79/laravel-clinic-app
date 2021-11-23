@@ -24,7 +24,8 @@ class CreateAdminsTable extends Migration
             $table->enum('national_status', ['Citizen', 'Foreigner']);
             $table->unsignedBigInteger('national_id'); 
             $table->mediumInteger('admin_role');
-            $table->foreign('admin_role')->references('id')->on('admin_roles');    
+            $table->foreign('admin_role')->references('id')->on('admin_roles');
+            $table->boolean('active');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

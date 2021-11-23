@@ -26,7 +26,8 @@ class SubMenuController extends BaseController
             'menu_id' => 'required|integer',
             'name' => 'required|string',
             'slug' => 'required|string',
-            'url' => 'required|string'
+            'url' => 'required|string',
+            'active' => 'required|boolean'
         ]);
 
         $params = $request->all();
@@ -50,7 +51,8 @@ class SubMenuController extends BaseController
             'menu_id' => 'integer',
             'name' => 'string',
             'slug' => 'string',
-            'url' => 'string'
+            'url' => 'string',
+            'active' => 'boolean'
         ]);
 
         $params = $request->all();

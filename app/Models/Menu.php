@@ -12,7 +12,7 @@ class Menu extends Model
     use HasFactory, Notifiable, HasApiTokens;
 
     protected $fillable = [
-        'name', 'slug', 'url'
+        'name', 'slug', 'url', 'active',
     ];
 
     public function submenus(){

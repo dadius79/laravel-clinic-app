@@ -10,7 +10,7 @@ class OptionMenu extends Model
     use HasFactory;
 
     protected $fillable = [
-        'sub_menu_id', 'name', 'slug', 'url'
+        'sub_menu_id', 'name', 'slug', 'url', 'active',
     ];
     
     public function sub_menus(){

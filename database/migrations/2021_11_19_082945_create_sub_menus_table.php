@@ -20,6 +20,7 @@ class CreateSubMenusTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('url');
+            $table->boolean('active');
             $table->timestamps();
         });
     }
