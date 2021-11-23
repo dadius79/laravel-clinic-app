@@ -11,6 +11,8 @@ class RepositoryServiceProvider extends ServiceProvider
     
     protected $repositories = [
         MenuContract::class => MenuRepository::class,
+        SubMenuContract::class => SubMenuRepository::class,
+        OptionMenuContract::class => OptionMenuRepository::class,
     ];
     /**
      * Register services.

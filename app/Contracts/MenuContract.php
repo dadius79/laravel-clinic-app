@@ -9,7 +9,7 @@ interface MenuContract
 
     public function createMenu(array $params);
 
-    public function updateMenu(array $params);
+    public function updateMenu(array $params, $id);
 
     public function deleteMenu($id);
 }

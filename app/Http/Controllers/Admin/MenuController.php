@@ -45,7 +45,7 @@ class MenuController extends BaseController
         return $this->sendResponse($success, 'Menu created successfully.');
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'name' => 'required|string',
@@ -55,7 +55,7 @@ class MenuController extends BaseController
 
         $params = $request->all();
 
-        $menu = $this->menuRepository->updateMenu($params);
+        $menu = $this->menuRepository->updateMenu($params, $id);
 
         if(!$menu){
             //Extract and provide error

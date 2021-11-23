@@ -24,8 +24,22 @@ Route::prefix('admin')->group(function(){
         Route::prefix('menu')->group(function(){
             Route::get('/', 'App\Http\Controllers\Admin\MenuController@index');
             Route::post('/add', 'App\Http\Controllers\Admin\MenuController@store');
-            Route::post('/edit', 'App\Http\Controllers\Admin\MenuController@update');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\MenuController@update');
             Route::post('/delete/{id}', 'App\Http\Controllers\Admin\MenuController@delete');
+        });
+
+        Route::prefix('sub-menu')->group(function(){
+            Route::get('/', 'App\Http\Controllers\Admin\SubMenuController@index');
+            Route::post('/add', 'App\Http\Controllers\Admin\SubMenuController@store');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\SubMenuController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\SubMenuController@delete');
+        });
+
+        Route::prefix('option-menu')->group(function(){
+            Route::get('/', 'App\Http\Controllers\Admin\OptionMenuController@index');
+            Route::post('/add', 'App\Http\Controllers\Admin\OptionMenuController@store');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\OptionMenuController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\OptionMenuController@delete');
         });
 
     });

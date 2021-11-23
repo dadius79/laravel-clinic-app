@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Menu;
 //use App\Traits\UploadAble;
-use Illuminate\Http\UploadedFile;
+//use Illuminate\Http\UploadedFile;
 use App\Contracts\MenuContract;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -47,9 +47,10 @@ class MenuRepository extends BaseRepository implements MenuContract
         }
     }
 
-    public function updateMenu(array $params){
+    public function updateMenu(array $params, $id){
 
-        $menu = $this->findMenuById($params['id']);
+        //$menu = $this->findMenuById($params['id']);
+        $menu = $this->findMenuById($id);
 
         $collection = collect($params);
 
