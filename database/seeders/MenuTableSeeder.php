@@ -15,42 +15,49 @@ class MenuTableSeeder extends Seeder
 
     protected $menus = [
         [
+            /*1*/
             'name' => 'Patients',
             'slug' => 'patients',
             'url' => 'patients',
             'active' => '1',
         ],
         [
+            /*2*/
             'name' => 'Visits',
             'slug' => 'visits',
             'url' => 'visits',
             'active' => '1',
         ],
         [
+            /*3*/
             'name' => 'Consultations',
             'slug' => 'consultations',
             'url' => 'consultations',
             'active' => '1',
         ],
         [
+            /*4*/
             'name' => 'Pharmacy',
             'slug' => 'pharmacy',
             'url' => 'pharmacy',
             'active' => '1',
         ],
         [
+            /*5*/
             'name' => 'Cashier',
             'slug' => 'cashier',
             'url' => 'cashier',
             'active' => '1',
         ],
         [
+            /*6*/
             'name' => 'Admin',
             'slug' => 'admin',
             'url' => 'admin',
             'active' => '1',
         ],
         [
+            /*7*/
             'name' => 'Masters',
             'slug' => 'masters',
             'url' => 'masters',

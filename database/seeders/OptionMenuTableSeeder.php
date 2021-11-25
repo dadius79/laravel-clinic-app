@@ -15,6 +15,7 @@ class OptionMenuTableSeeder extends Seeder
 
     protected $optionmenus = [
         [
+            /*1*/
             'sub_menu_id' => '11',
             'name' => 'Active Rooms',
             'slug' => 'active-rooms',
@@ -22,6 +23,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*2*/
             'sub_menu_id' => '11',
             'name' => 'Inactive Rooms',
             'slug' => 'inactive-rooms',
@@ -29,6 +31,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*3*/
             'sub_menu_id' => '12',
             'name' => 'In stock',
             'slug' => 'in-stock',
@@ -36,6 +39,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*4*/
             'sub_menu_id' => '12',
             'name' => 'Out of Stock',
             'slug' => 'out-of-stock',
@@ -43,6 +47,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*5*/
             'sub_menu_id' => '13',
             'name' => 'Active Departments',
             'slug' => 'active-departments',
@@ -50,6 +55,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*6*/
             'sub_menu_id' => '13',
             'name' => 'Inactive Departments',
             'slug' => 'inactive-departments',
@@ -57,6 +63,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*7*/
             'sub_menu_id' => '14',
             'name' => 'Active Menus',
             'slug' => 'active-menus',
@@ -64,6 +71,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*8*/
             'sub_menu_id' => '14',
             'name' => 'Inactive Menus',
             'slug' => 'inactive-menus',
@@ -71,6 +79,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*9*/
             'sub_menu_id' => '15',
             'name' => 'Active Sub Menus',
             'slug' => 'active-sub-menus',
@@ -78,6 +87,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*10*/
             'sub_menu_id' => '15',
             'name' => 'Inactive Sub Menus',
             'slug' => 'inactive-sub-menus',
@@ -85,6 +95,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*11*/
             'sub_menu_id' => '16',
             'name' => 'Active Option Menus',
             'slug' => 'active-option-menus',
@@ -92,6 +103,7 @@ class OptionMenuTableSeeder extends Seeder
             'active' => '1',
         ],
         [
+            /*12*/
             'sub_menu_id' => '16',
             'name' => 'Inactive Option Menus',
             'slug' => 'inactive-option-menus',
