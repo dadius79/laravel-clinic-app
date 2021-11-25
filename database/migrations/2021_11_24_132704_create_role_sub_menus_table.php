@@ -14,7 +14,11 @@ class CreateRoleSubMenusTable extends Migration
     public function up()
     {
         Schema::create('role_sub_menus', function (Blueprint $table) {
-            $table->id();
+            $table->mediumIncrements('id');
+            $table->mediumInteger('role_id');
+            $table->foreign('role_id')->references('id')->on('admin_roles');
+            $table->mediumInteger('sub_menu_id');
+            $table->foreign('sub_menu_id')->references('id')->on('sub_menus');
             $table->timestamps();
         });
     }

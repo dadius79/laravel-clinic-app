@@ -14,4 +14,17 @@ class AdminRoles extends Model
     public function admin(){
         return $this->belongsTo(Admin::class);
     }
+
+    public function role_menus(){
+        return $this->hasMany(RoleMenu::class);
+    }
+
+    public function role_sub_menus(){
+        return $this->hasMany(RoleSubMenu::class);
+    }
+
+    public function role_option_menus(){
+        return $this->hasMany(RoleOptionMenu::class);
+    }
+    
 }

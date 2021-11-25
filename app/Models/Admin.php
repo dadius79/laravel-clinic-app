@@ -29,4 +29,16 @@ class Admin extends Authenticatable
     public function admin_role(){
         return $this->hasOne(AdminRoles::class);
     }
+
+    public function user_menus(){
+        return $this->hasMany(UserMenu::class);
+    }
+
+    public function user_sub_menus(){
+        return $this->hasMany(UserSubMenu::class);
+    }
+
+    public function user_option_menus(){
+        return $this->hasMany(UserOptionMenu::class);
+    }
 }

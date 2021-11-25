@@ -18,4 +18,12 @@ class Menu extends Model
     public function submenus(){
         return $this->hasMany(SubMenu::class);
     }
+
+    public function role_menus(){
+        return $this->hasMany(RoleMenu::class);
+    }
+
+    public function user_menus(){
+        return $this->hasMany(UserMenu::class);
+    }
 }

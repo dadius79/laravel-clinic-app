@@ -14,7 +14,11 @@ class CreateUserSubMenusTable extends Migration
     public function up()
     {
         Schema::create('user_sub_menus', function (Blueprint $table) {
-            $table->id();
+            $table->mediumIncrements('id');
+            $table->bigInteger('admin_id');
+            $table->foreign('admin_id')->references('id')->on('admins');
+            $table->mediumInteger('sub_menu_id');
+            $table->foreign('sub_menu_id')->references('id')->on('sub_menus');
             $table->timestamps();
         });
     }

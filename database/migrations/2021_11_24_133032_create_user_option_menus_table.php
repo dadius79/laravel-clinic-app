@@ -14,7 +14,11 @@ class CreateUserOptionMenusTable extends Migration
     public function up()
     {
         Schema::create('user_option_menus', function (Blueprint $table) {
-            $table->id();
+            $table->mediumIncrements('id');
+            $table->bigInteger('admin_id');
+            $table->foreign('admin_id')->references('id')->on('admins');
+            $table->mediumInteger('option_menu_id');
+            $table->foreign('option_menu_id')->references('id')->on('option_menus');
             $table->timestamps();
         });
     }

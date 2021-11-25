@@ -16,4 +16,12 @@ class OptionMenu extends Model
     public function sub_menus(){
         return $this->belongsTo(SubMenu::class);
     }
+
+    public function role_option_menus(){
+        return $this->hasMany(RoleOptionMenu::class);
+    }
+
+    public function user_option_menus(){
+        return $this->hasMany(UserOptionMenu::class);
+    }
 }
