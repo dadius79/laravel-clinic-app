@@ -22,7 +22,12 @@ class CreateAdminsTable extends Migration
             $table->date('date_of_birth');
             $table->enum('sex', ['Male', 'Female']);
             $table->enum('national_status', ['Citizen', 'Foreigner']);
-            $table->unsignedBigInteger('national_id'); 
+            $table->unsignedBigInteger('national_id');
+            $tale->string('address');
+            $table->mediumInteger('phone_number');
+            $table->mediumInteger('emergency_number')->nullable(); 
+            $table->mediumInteger('profession_id')->nullable();
+            $table->mediumInteger('profession_certificate_number')->nullable();
             $table->mediumInteger('admin_role');
             $table->foreign('admin_role')->references('id')->on('admin_roles');
             $table->boolean('active');
