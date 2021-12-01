@@ -42,6 +42,20 @@ Route::prefix('admin')->group(function(){
             Route::post('/delete/{id}', 'App\Http\Controllers\Admin\OptionMenuController@delete');
         });
 
+        Route::prefix('medicine')->group(function(){
+            Route::get('/', 'App\Http\Controllers\Admin\MedicineController@index');
+            Route::post('/add', 'App\Http\Controllers\Admin\MedicineController@store');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\MedicineController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\MedicineController@delete');
+        });
+
+        Route::prefix('visit-rate')->group(function(){
+            Route::get('/', 'App\Http\Controllers\Admin\VisitRateController@index');
+            Route::post('/add', 'App\Http\Controllers\Admin\VisitRateController@store');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\VisitRateController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\VisitRateController@delete');
+        });
+
     });
 });
 

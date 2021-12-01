@@ -9,6 +9,10 @@ use App\Contracts\SubMenuContract;
 use App\Repositories\SubMenuRepository;
 use App\Contracts\OptionMenuContract;
 use App\Repositories\OptionMenuRepository;
+use App\Contracts\MedicineContract;
+use App\Repositories\MedicineRepository;
+use App\Contracts\VisitRateContract;
+use App\Repositories\VisitRateRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -17,6 +21,8 @@ class RepositoryServiceProvider extends ServiceProvider
         MenuContract::class => MenuRepository::class,
         SubMenuContract::class => SubMenuRepository::class,
         OptionMenuContract::class => OptionMenuRepository::class,
+        MedicineContract::class => MedicineRepository::class,
+        VisitRateContract::class => VisitRateRepository::class,
     ];
     /**
      * Register services.
