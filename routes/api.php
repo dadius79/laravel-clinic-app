@@ -56,6 +56,13 @@ Route::prefix('admin')->group(function(){
             Route::post('/delete/{id}', 'App\Http\Controllers\Admin\VisitRateController@delete');
         });
 
+        Route::prefix('patient')->group(function(){
+            Route::get('/', 'App\Http\Controllers\Admin\PatientController@index');
+            Route::post('/add', 'App\Http\Controllers\Admin\PatientController@store');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\PatientController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\PatientController@delete');
+        });
+
     });
 });
 
