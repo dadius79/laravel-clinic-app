@@ -41,4 +41,8 @@ class Admin extends Authenticatable
     public function user_option_menus(){
         return $this->hasMany(UserOptionMenu::class);
     }
+
+    public function patients(){
+        return $this->hasMany(Patient::class);
+    }
 }

@@ -12,4 +12,8 @@ class Patient extends Model
     protected $fillable = [
         'name', 'date_of_birth', 'sex', 'national_status', 'national_id', 'address', 'phone_number', 'emergency_number', 'registered_by',
     ];
+
+    public function admins(){
+        return $this->belongsTo(Admin::class);
+    }
 }
