@@ -25,8 +25,8 @@ class ConsultationSeeder extends Seeder
             /*2*/
             /*doctor 3*/
             'visit_id' => '3',
-            'details' => '',
-            'consultation_fee' => '',
+            'details' => NULL,
+            'consultation_fee' => NULL,
             'status' => 'Pending',
         ],
         [
@@ -41,8 +41,8 @@ class ConsultationSeeder extends Seeder
             /*4*/
             /*doctor 6*/
             'visit_id' => '7',
-            'details' => '',
-            'consultation_fee' => '',
+            'details' => NULL,
+            'consultation_fee' => NULL,
             'status' => 'Pending',
         ],
         [

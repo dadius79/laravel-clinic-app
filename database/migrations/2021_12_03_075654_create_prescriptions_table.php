@@ -17,7 +17,7 @@ class CreatePrescriptionsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('visit_id');
             $table->foreign('visit_id')->references('id')->on('visits');
-            $table->mediumInteger('medicine_code');
+            $table->char('medicine_code');
             $table->foreign('medicine_code')->references('code')->on('medicines');
             $table->string('strength');
             $table->string('dose');

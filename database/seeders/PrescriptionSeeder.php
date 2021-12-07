@@ -55,7 +55,7 @@ class PrescriptionSeeder extends Seeder
             'amount' => '2750',
             'issuance' => 'Pending',
             'prescribed_by' => '3',
-            'issued_by' => '',
+            'issued_by' => NULL,
         ],
         [
             'visit_id' => '5',
@@ -66,7 +66,7 @@ class PrescriptionSeeder extends Seeder
             'amount' => '292',
             'issuance' => 'Pending',
             'prescribed_by' => '3',
-            'issued_by' => '',
+            'issued_by' => NULL,
         ],
         [
             'visit_id' => '5',
@@ -77,7 +77,7 @@ class PrescriptionSeeder extends Seeder
             'amount' => '2500',
             'issuance' => 'Pending',
             'prescribed_by' => '3',
-            'issued_by' => '',
+            'issued_by' => NULL,
         ],
         [
             'visit_id' => '4',
@@ -99,7 +99,7 @@ class PrescriptionSeeder extends Seeder
             'amount' => '609',
             'issuance' => 'Pending',
             'prescribed_by' => '4',
-            'issued_by' => '',
+            'issued_by' => NULL,
         ],
         [
             'visit_id' => '6',
@@ -110,7 +110,7 @@ class PrescriptionSeeder extends Seeder
             'amount' => '100',
             'issuance' => 'Pending',
             'prescribed_by' => '4',
-            'issued_by' => '',
+            'issued_by' => NULL,
         ],
         [
             'visit_id' => '6',
@@ -121,7 +121,7 @@ class PrescriptionSeeder extends Seeder
             'amount' => '550',
             'issuance' => 'Pending',
             'prescribed_by' => '4',
-            'issued_by' => '',
+            'issued_by' => NULL,
         ],
     ];
 

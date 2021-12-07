@@ -78,7 +78,7 @@ class PatientSeeder extends Seeder
             /*6*/
             'name' => 'Andy Thompson',
             'date_of_birth' => '1975-04-05',
-            'sex' => 'Male',
+            'sex' => 'Female',
             'national_status' => 'Citizen',
             'national_id' => '10000069',
             'address' => 'Nairobi',
@@ -90,7 +90,7 @@ class PatientSeeder extends Seeder
             /*7*/
             'name' => 'Sophie Turner',
             'date_of_birth' => '1964-02-13',
-            'sex' => 'Male',
+            'sex' => 'Female',
             'national_status' => 'Citizen',
             'national_id' => '69696969',
             'address' => 'Kisii',
@@ -114,7 +114,7 @@ class PatientSeeder extends Seeder
             /*9*/
             'name' => 'Rosa Miers',
             'date_of_birth' => '1996-07-22',
-            'sex' => 'Male',
+            'sex' => 'Female',
             'national_status' => 'Citizen',
             'national_id' => '65455522',
             'address' => 'Marsabit',

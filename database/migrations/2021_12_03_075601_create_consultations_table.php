@@ -17,8 +17,8 @@ class CreateConsultationsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('visit_id');
             $table->foreign('visit_id')->references('id')->on('visits');
-            $table->text('details');
-            $table->double('consultation_fee', 8, 2);
+            $table->text('details')->nullable();
+            $table->double('consultation_fee', 8, 2)->nullable();
             $table->enum('status', ['Pending', 'Completed']);
             $table->timestamps();
         });
