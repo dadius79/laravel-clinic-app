@@ -113,6 +113,14 @@ class UserSubMenuSeeder extends Seeder
             'admin_id' => '5',
             'sub_menu_id' => '8',
         ],
+        [
+            'admin_id' => '6',
+            'sub_menu_id' => '3',
+        ],
+        [
+            'admin_id' => '6',
+            'sub_menu_id' => '4',
+        ],
     ];
 
     public function run()

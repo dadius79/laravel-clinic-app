@@ -65,6 +65,10 @@ class UserMenuSeeder extends Seeder
             'admin_id' => '5',
             'menu_id' => '5',
         ],
+        [
+            'admin_id' => '3',
+            'menu_id' => '6',
+        ],
     ];
 
     public function run()

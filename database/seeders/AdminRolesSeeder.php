@@ -15,18 +15,23 @@ class AdminRolesSeeder extends Seeder
 
     protected $roles = [
         [
+            /*1*/
             'role' => 'Manager',
         ],
         [
+            /*2*/
             'role' => 'Receptionist',
         ],
         [
+            /*3*/
             'role' => 'Doctor',
         ],
         [
+            /*4*/
             'role' => 'Pharmacist',
         ],
         [
+            /*5*/
             'role' => 'Cashier',
         ], 
     ];

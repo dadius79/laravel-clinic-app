@@ -16,4 +16,8 @@ class Patient extends Model
     public function admins(){
         return $this->belongsTo(Admin::class);
     }
+
+    public function visits(){
+        return $this->hasMany(Visit::class);
+    }
 }

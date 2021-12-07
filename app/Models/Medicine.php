@@ -12,4 +12,8 @@ class Medicine extends Model
     protected $fillable = [
         'name', 'code', 'type', 'rate_per_unit', 'quantity', 'in_stock', 'expiry_date',
     ];
+
+    public function prescriptions(){
+        return $this->hasMany(Prescription::class);
+    }
 }

@@ -16,7 +16,7 @@ class CreateMedicinesTable extends Migration
         Schema::create('medicines', function (Blueprint $table) {
             $table->mediumIncrements('id');
             $table->string('name');
-            $table->string('code');
+            $table->string('code')->unique();
             $table->string('type');
             $table->double('rate_per_unit', 8, 2);
             $table->mediumInteger('quantity');

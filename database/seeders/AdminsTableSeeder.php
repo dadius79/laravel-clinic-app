@@ -17,6 +17,7 @@ class AdminsTableSeeder extends Seeder
     protected $admins = [
         [
             /*1*/
+            /*Manager*/
             'name' => 'John Courage Doe',
             'username' => 'johndoe',
             'email' => 'johndoe@admin.com',
@@ -35,6 +36,7 @@ class AdminsTableSeeder extends Seeder
         ],
         [
             /*2*/
+            /*Receptionist*/
             'name' => 'Lewis Hamilton',
             'username' => 'lewishamilton',
             'email' => 'lewishamilton@admin.com',
@@ -53,6 +55,7 @@ class AdminsTableSeeder extends Seeder
         ],
         [
             /*3*/
+            /*Doctor*/
             'name' => 'Serena Williams',
             'username' => 'serenawilliams',
             'email' => 'serenawilliams@admin.com',
@@ -71,6 +74,7 @@ class AdminsTableSeeder extends Seeder
         ],
         [
             /*4*/
+            /*Pharmacist*/
             'name' => 'Barack Obama',
             'username' => 'barackobama',
             'email' => 'barackobama@admin.com',
@@ -89,6 +93,7 @@ class AdminsTableSeeder extends Seeder
         ],
         [
             /*5*/
+            /*Cashier*/
             'name' => 'Maya Angelou',
             'username' => 'mayaangelou',
             'email' => 'mayaangelou@admin.com',
@@ -102,6 +107,25 @@ class AdminsTableSeeder extends Seeder
             'profession_id' => NULL,
             'profession_certificate_number' => NULL,
             'admin_role' => '5',
+            'active' => '1',
+            'password' => 'password',
+        ],
+        [
+            /*6*/
+            /*Doctor*/
+            'name' => 'Wayne Rooney',
+            'username' => 'waynerooney',
+            'email' => 'waynerooney@admin.com',
+            'date_of_birth' => '1985-07-06',
+            'sex' => 'Male',
+            'national_status' => 'Citizen',
+            'national_id' => '45820010',
+            'address' => 'Mombasa',
+            'phone_number' => '0732985321',
+            'emergency_number' => NULL,
+            'profession_id' => NULL,
+            'profession_certificate_number' => NULL,
+            'admin_role' => '3',
             'active' => '1',
             'password' => 'password',
         ],

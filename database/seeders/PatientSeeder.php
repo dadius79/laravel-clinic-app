@@ -15,6 +15,7 @@ class PatientSeeder extends Seeder
 
     protected $patients = [
         [
+            /*1*/
             'name' => 'Johnson Hemsworth',
             'date_of_birth' => '1995-02-03',
             'sex' => 'Male',
@@ -26,6 +27,7 @@ class PatientSeeder extends Seeder
             'registered_by' => '2'
         ],
         [
+            /*2*/
             'name' => 'Narco Rodriguez',
             'date_of_birth' => '1975-07-21',
             'sex' => 'Male',
@@ -37,6 +39,7 @@ class PatientSeeder extends Seeder
             'registered_by' => '2'
         ],
         [
+            /*3*/
             'name' => 'Tom Miller',
             'date_of_birth' => '1988-07-10',
             'sex' => 'Male',
@@ -48,6 +51,7 @@ class PatientSeeder extends Seeder
             'registered_by' => '2'
         ],
         [
+            /*4*/
             'name' => 'Terri Silva',
             'date_of_birth' => '1999-03-03',
             'sex' => 'Male',
@@ -59,6 +63,7 @@ class PatientSeeder extends Seeder
             'registered_by' => '2'
         ],
         [
+            /*5*/
             'name' => 'Jeff Montano',
             'date_of_birth' => '1991-12-01',
             'sex' => 'Male',
@@ -70,6 +75,7 @@ class PatientSeeder extends Seeder
             'registered_by' => '2'
         ],
         [
+            /*6*/
             'name' => 'Andy Thompson',
             'date_of_birth' => '1975-04-05',
             'sex' => 'Male',
@@ -81,6 +87,7 @@ class PatientSeeder extends Seeder
             'registered_by' => '2'
         ],
         [
+            /*7*/
             'name' => 'Sophie Turner',
             'date_of_birth' => '1964-02-13',
             'sex' => 'Male',
@@ -92,6 +99,7 @@ class PatientSeeder extends Seeder
             'registered_by' => '2'
         ],
         [
+            /*8*/
             'name' => 'Annie Franklin',
             'date_of_birth' => '1993-04-23',
             'sex' => 'Male',
@@ -103,6 +111,7 @@ class PatientSeeder extends Seeder
             'registered_by' => '2'
         ],
         [
+            /*9*/
             'name' => 'Rosa Miers',
             'date_of_birth' => '1996-07-22',
             'sex' => 'Male',
@@ -114,6 +123,7 @@ class PatientSeeder extends Seeder
             'registered_by' => '2'
         ],
         [
+            /*10*/
             'name' => 'John Stuart',
             'date_of_birth' => '1975-03-02',
             'sex' => 'Male',
