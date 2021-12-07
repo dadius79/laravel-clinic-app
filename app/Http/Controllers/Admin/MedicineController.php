@@ -17,7 +17,7 @@ class MedicineController extends BaseController
 
     public function index(){
         $medicine = $this->medicineRepository->listMedicine();
-        return $this->sendResponse($medicine, 'Medicine Fetched.');
+        return $this->sendResponse($medicine, 'Medicine Fetched Successfully.');
     }
 
     public function store(Request $request)

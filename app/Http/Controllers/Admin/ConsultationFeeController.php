@@ -14,7 +14,7 @@ class ConsultationFeeController extends BaseController
 
     public function index(){
         $consultationfee = $this->consultationFeeRepository->listConsultationFees();
-        return $this->sendResponse($consultationfee, 'Fetched Consultation Fees.');
+        return $this->sendResponse($consultationfee, 'Consultation Fees Fetched Successfully.');
     }
 
     public function store(Request $request){

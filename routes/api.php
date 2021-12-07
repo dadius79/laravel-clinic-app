@@ -70,6 +70,13 @@ Route::prefix('admin')->group(function(){
             Route::post('/delete/{id}', 'App\Http\Controllers\Admin\ConsultationFeeController@delete');
         });
 
+        Route::prefix('visit')->group(function(){
+            Route::get('/', 'App\Http\Controllers\Admin\VisitController@index');
+            Route::post('/add', 'App\Http\Controllers\Admin\VisitController@store');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\VisitController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\VisitController@delete');
+        });
+
     });
 });
 

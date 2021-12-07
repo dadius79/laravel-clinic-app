@@ -24,6 +24,7 @@ class RepositoryServiceProvider extends ServiceProvider
         MedicineContract::class => MedicineRepository::class,
         VisitRateContract::class => VisitRateRepository::class,
         PatientContract::class => PatientRepository::class,
+        ConsultationFeeContract::class => ConsultationFeeRepository::class,
     ];
     /**
      * Register services.
