@@ -12,4 +12,8 @@ class ConsultationFee extends Model
     protected $fillable = [
         'doctor_id', 'fees', 'active',
     ];
+
+    public function admins(){
+        return $this->belongsTo(Admin::class);
+    }
 }

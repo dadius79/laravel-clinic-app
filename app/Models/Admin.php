@@ -57,4 +57,8 @@ class Admin extends Authenticatable
     public function billings(){
         return $this->hasMany(Admin::class);
     }
+
+    public function consultation_fees(){
+        return $this->hasMany(ConsultationFee::class);
+    }
 }
