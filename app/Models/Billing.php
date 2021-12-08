@@ -10,7 +10,7 @@ class Billing extends Model
     use HasFactory;
 
     protected $fillable = [
-        'paid', 'balance', 'served_by', 'status',
+        'balance', 'paid', 'served_by', 'status',
     ];
 
     public function visits(){

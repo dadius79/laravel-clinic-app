@@ -23,7 +23,7 @@ class CreatePrescriptionsTable extends Migration
             $table->string('dose');
             $table->mediumInteger('quantity');
             $table->double('amount', 8, 2);
-            $table->enum('issuance', ['Pending', 'Completed']);
+            $table->enum('issuance', ['Pending', 'Completed', 'Cancelled']);
             $table->bigInteger('prescribed_by');
             $table->foreign('prescribed_by')->references('id')->on('admins');
             $table->bigInteger('issued_by')->nullable();

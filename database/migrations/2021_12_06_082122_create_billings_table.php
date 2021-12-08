@@ -17,8 +17,8 @@ class CreateBillingsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('visit_id');
             $table->foreign('visit_id')->references('id')->on('visits');
-            $table->double('paid', 8, 2);
             $table->double('balance', 8, 2);
+            $table->double('paid', 8, 2);
             $table->bigInteger('served_by');
             $table->foreign('served_by')->references('id')->on('admins');
             $table->enum('status', ['Pending', 'Completed']);

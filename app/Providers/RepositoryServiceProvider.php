@@ -13,6 +13,14 @@ use App\Contracts\MedicineContract;
 use App\Repositories\MedicineRepository;
 use App\Contracts\VisitRateContract;
 use App\Repositories\VisitRateRepository;
+use App\Contracts\VisitContract;
+use App\Repositories\VisitRepository;
+use App\Contracts\ConsultationContract;
+use App\Repositories\ConsultationRepository;
+use App\Contracts\PrescriptionContract;
+use App\Repositories\PrescriptionRepository;
+use App\Contracts\BillingContract;
+use App\Repositories\BillingRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -25,6 +33,10 @@ class RepositoryServiceProvider extends ServiceProvider
         VisitRateContract::class => VisitRateRepository::class,
         PatientContract::class => PatientRepository::class,
         ConsultationFeeContract::class => ConsultationFeeRepository::class,
+        VisitContract::class => VisitRepository::class,
+        ConsultationContract::class => ConsultationRepository::class,
+        PrescriptionContract::class => PrescriptionRepository::class,
+        BillingContract::class => BillingRepository::class,
     ];
     /**
      * Register services.

@@ -77,6 +77,27 @@ Route::prefix('admin')->group(function(){
             Route::post('/delete/{id}', 'App\Http\Controllers\Admin\VisitController@delete');
         });
 
+        Route::prefix('consultation')->group(function(){
+            Route::get('/', 'App\Http\Controllers\Admin\ConsultationController@index');
+            Route::post('/add', 'App\Http\Controllers\Admin\ConsultationController@store');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\ConsultationController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\ConsultationController@delete');
+        });
+
+        Route::prefix('prescription')->group(function(){
+            Route::get('/', 'App\Http\Controllers\Admin\PrescriptionController@index');
+            Route::post('/add', 'App\Http\Controllers\Admin\PrescriptionController@store');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\PrescriptionController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\PrescriptionController@delete');
+        });
+
+        Route::prefix('billing')->group(function(){
+            Route::get('/', 'App\Http\Controllers\Admin\BillingController@index');
+            Route::post('/add', 'App\Http\Controllers\Admin\BillingController@store');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\BillingController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\BillingController@delete');
+        });
+
     });
 });
 
