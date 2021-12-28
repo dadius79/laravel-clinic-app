@@ -42,8 +42,8 @@ class LoginController extends BaseController
         [$id, $token] = explode('|', $loginToken->plainTextToken, 2);
         
         $success['token'] = $token;
-        $success['name'] = $admin->name;
         $success['_id'] = $admin->id;
+        $success['name'] = $admin->name;
 
         return $this->sendResponse($success, 'User signed in');
         Log::info('User Login Successful');
