@@ -21,6 +21,10 @@ use App\Contracts\PrescriptionContract;
 use App\Repositories\PrescriptionRepository;
 use App\Contracts\BillingContract;
 use App\Repositories\BillingRepository;
+use App\Contracts\PatientContract;
+use App\Repositories\PatientRepository;
+use App\Contracts\ConsultationFeeContract;
+use App\Repositories\ConsultationFeeRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -37,6 +41,7 @@ class RepositoryServiceProvider extends ServiceProvider
         ConsultationContract::class => ConsultationRepository::class,
         PrescriptionContract::class => PrescriptionRepository::class,
         BillingContract::class => BillingRepository::class,
+        PatientContract::class => PatientRepository::class,
     ];
     /**
      * Register services.

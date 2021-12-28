@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function(){
     Route::post('login', 'App\Http\Controllers\Admin\LoginController@login');
+    Route::get('user-profile/{id}', 'App\Http\Controllers\Admin\LoginController@userProfile');
 
     Route::middleware('auth:sanctum')->group(function() {
         Route::post('signup', 'App\Http\Controllers\Admin\LoginController@signup');

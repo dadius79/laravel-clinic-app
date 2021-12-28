@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends BaseController
 {
@@ -25,13 +26,27 @@ class LoginController extends BaseController
         if(!$admin || !Hash::check($fields['password'], $admin->password)){
 
             return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
+            Log::info('User Login Failed');
 
         }
 
-        $success['token'] = $admin->createToken('MyAuthApp')->plainTextToken;
+        /** 
+         * OLD CODE
+         * $loginToken = $admin->createToken('MyAuthApp')->plainTextToken;
+         * $success['token'] = $admin->createToken('MyAuthApp')->plainTextToken;
+         * $success['access_token'] = $admin->createToken('MyAuthApp')->plainTextToken;
+        */
+
+        $loginToken = $admin->createToken('MyAuthApp');
+
+        [$id, $token] = explode('|', $loginToken->plainTextToken, 2);
+        
+        $success['token'] = $token;
         $success['name'] = $admin->name;
+        $success['_id'] = $admin->id;
 
         return $this->sendResponse($success, 'User signed in');
+        Log::info('User Login Successful');
 
     }//end function login
 
@@ -68,6 +83,27 @@ class LoginController extends BaseController
         return $this->sendResponse($success, 'User created successfully.');
 
     }//end function signup
+
+    public function userProfile($id){
+
+        $profiles = Admin::all();
+        //$profile = Admin::where('id', $id)->get();
+        $profile = $profiles->find($id);
+
+        if(!$profile){
+            $success = [];
+            return $this->sendResponse($success, 'User Profile Could Not Be Found');
+            $this->command->info('User profile could not be found');
+        }
+
+        $success['_id'] = $profile->id;
+        $success['name'] = $profile->name;
+        $success['email'] = $profile->email;
+
+        //$this->command->info('User profile extracted successfully');
+
+        return $this->sendResponse($success, 'User Profile Successfully');
+    }
 
     public function logout(Request $request){
         auth()->user()->tokens()->delete();
