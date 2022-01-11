@@ -31,6 +31,7 @@ Route::prefix('admin')->group(function(){
 
         Route::prefix('sub-menu')->group(function(){
             Route::get('/', 'App\Http\Controllers\Admin\SubMenuController@index');
+            Route::get('/menu/{url}', 'App\Http\Controllers\Admin\SubMenuController@menusubmenu');
             Route::post('/add', 'App\Http\Controllers\Admin\SubMenuController@store');
             Route::post('/edit/{id}', 'App\Http\Controllers\Admin\SubMenuController@update');
             Route::post('/delete/{id}', 'App\Http\Controllers\Admin\SubMenuController@delete');

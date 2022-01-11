@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
 use App\Contracts\SubMenuContract;
+use App\Models\Menu;
+use App\Models\SubMenu;
 
 class SubMenuController extends BaseController
 {
@@ -17,6 +19,12 @@ class SubMenuController extends BaseController
 
     public function index(){
         $submenu = $this->subMenuRepository->listSubMenu();
+        return $this->sendResponse($submenu, 'Sub Menu Fetched.');
+    }
+
+    public function menusubmenu($url){
+        $menu = Menu::where('url', $url)->first();
+        $submenu = SubMenu::where('menu_id', $menu->id)->get();
         return $this->sendResponse($submenu, 'Sub Menu Fetched.');
     }
 
