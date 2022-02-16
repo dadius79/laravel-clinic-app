@@ -15,7 +15,7 @@ class CreateConsultationsTable extends Migration
     {
         Schema::create('consultations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('visit_id');
+            $table->unsignedBigInteger('visit_id');
             $table->foreign('visit_id')->references('id')->on('visits');
             $table->text('details')->nullable();
             $table->double('consultation_fee', 8, 2)->nullable();

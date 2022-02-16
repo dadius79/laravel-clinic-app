@@ -15,9 +15,9 @@ class CreateUserMenusTable extends Migration
     {
         Schema::create('user_menus', function (Blueprint $table) {
             $table->mediumIncrements('id');
-            $table->bigInteger('admin_id');
+            $table->unsignedBigInteger('admin_id');
             $table->foreign('admin_id')->references('id')->on('admins');
-            $table->mediumInteger('menu_id');
+            $table->unsignedMediumInteger('menu_id');
             $table->foreign('menu_id')->references('id')->on('menus');
             $table->timestamps();
         });

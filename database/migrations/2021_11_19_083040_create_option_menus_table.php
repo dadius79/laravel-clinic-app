@@ -15,7 +15,7 @@ class CreateOptionMenusTable extends Migration
     {
         Schema::create('option_menus', function (Blueprint $table) {
             $table->mediumIncrements('id');
-            $table->mediumInteger('sub_menu_id');
+            $table->unsignedMediumInteger('sub_menu_id');
             $table->foreign('sub_menu_id')->references('id')->on('sub_menus');
             $table->string('name');
             $table->string('slug');

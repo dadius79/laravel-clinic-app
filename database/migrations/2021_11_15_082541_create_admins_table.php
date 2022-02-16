@@ -28,7 +28,7 @@ class CreateAdminsTable extends Migration
             $table->bigInteger('emergency_number')->nullable(); 
             $table->mediumInteger('profession_id')->nullable();
             $table->bigInteger('profession_certificate_number')->nullable();
-            $table->mediumInteger('admin_role');
+            $table->unsignedMediumInteger('admin_role');
             $table->foreign('admin_role')->references('id')->on('admin_roles');
             $table->boolean('active');
             $table->string('password');

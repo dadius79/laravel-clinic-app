@@ -15,7 +15,7 @@ class CreateSubMenusTable extends Migration
     {
         Schema::create('sub_menus', function (Blueprint $table) {
             $table->mediumIncrements('id');
-            $table->mediumInteger('menu_id');
+            $table->unsignedMediumInteger('menu_id');
             $table->foreign('menu_id')->references('id')->on('menus');
             $table->string('name');
             $table->string('slug');

@@ -15,7 +15,7 @@ class CreateConsultationFeesTable extends Migration
     {
         Schema::create('consultation_fees', function (Blueprint $table) {
             $table->mediumIncrements('id');
-            $table->bigInteger('doctor_id');
+            $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('admins');
             $table->double('fees', 8, 2);
             $table->boolean('active');

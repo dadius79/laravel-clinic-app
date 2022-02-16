@@ -15,11 +15,11 @@ class CreateBillingsTable extends Migration
     {
         Schema::create('billings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('visit_id');
+            $table->unsignedBigInteger('visit_id');
             $table->foreign('visit_id')->references('id')->on('visits');
             $table->double('balance', 8, 2);
             $table->double('paid', 8, 2);
-            $table->bigInteger('served_by');
+            $table->unsignedBigInteger('served_by');
             $table->foreign('served_by')->references('id')->on('admins');
             $table->enum('status', ['Pending', 'Completed']);
             $table->timestamps();

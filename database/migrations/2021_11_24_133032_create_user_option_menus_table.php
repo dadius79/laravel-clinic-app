@@ -15,9 +15,9 @@ class CreateUserOptionMenusTable extends Migration
     {
         Schema::create('user_option_menus', function (Blueprint $table) {
             $table->mediumIncrements('id');
-            $table->bigInteger('admin_id');
+            $table->unsignedBigInteger('admin_id');
             $table->foreign('admin_id')->references('id')->on('admins');
-            $table->mediumInteger('option_menu_id');
+            $table->unsignedMediumInteger('option_menu_id');
             $table->foreign('option_menu_id')->references('id')->on('option_menus');
             $table->timestamps();
         });

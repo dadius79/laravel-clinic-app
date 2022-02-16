@@ -15,7 +15,7 @@ class CreatePrescriptionsTable extends Migration
     {
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('visit_id');
+            $table->unsignedBigInteger('visit_id');
             $table->foreign('visit_id')->references('id')->on('visits');
             $table->char('medicine_code');
             $table->foreign('medicine_code')->references('code')->on('medicines');
@@ -24,9 +24,9 @@ class CreatePrescriptionsTable extends Migration
             $table->mediumInteger('quantity');
             $table->double('amount', 8, 2);
             $table->enum('issuance', ['Pending', 'Completed', 'Cancelled']);
-            $table->bigInteger('prescribed_by');
+            $table->unsignedBigInteger('prescribed_by');
             $table->foreign('prescribed_by')->references('id')->on('admins');
-            $table->bigInteger('issued_by')->nullable();
+            $table->unsignedBigInteger('issued_by')->nullable();
             $table->foreign('issued_by')->references('id')->on('admins');
             $table->timestamps();
         });

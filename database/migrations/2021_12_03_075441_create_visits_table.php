@@ -15,14 +15,14 @@ class CreateVisitsTable extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('patient_id');
+            $table->unsignedBigInteger('patient_id');
             $table->foreign('patient_id')->references('id')->on('patients');
             $table->boolean('consultation');
-            $table->bigInteger('doctor_id')->nullable();
+            $table->unsignedBigInteger('doctor_id')->nullable();
             $table->foreign('doctor_id')->references('id')->on('admins');
             $table->boolean('over_the_counter');
             $table->enum('status', ['Pending', 'Completed']);
-            $table->bigInteger('created_by');
+            $table->unsignedBigInteger('created_by');
             $table->foreign('created_by')->references('id')->on('admins');
             $table->timestamps();
         });

@@ -15,9 +15,9 @@ class CreateRoleOptionMenusTable extends Migration
     {
         Schema::create('role_option_menus', function (Blueprint $table) {
             $table->mediumIncrements('id');
-            $table->mediumInteger('role_id');
+            $table->unsignedMediumInteger('role_id');
             $table->foreign('role_id')->references('id')->on('admin_roles');
-            $table->mediumInteger('option_menu_id');
+            $table->unsignedMediumInteger('option_menu_id');
             $table->foreign('option_menu_id')->references('id')->on('option_menus');
             $table->timestamps();
         });

@@ -23,7 +23,7 @@ class CreatePatientsTable extends Migration
             $table->string('address');
             $table->unsignedBigInteger('phone_number');
             $table->unsignedBigInteger('emergency_number')->nullable();
-            $table->bigInteger('registered_by');
+            $table->unsignedBigInteger('registered_by');
             $table->foreign('registered_by')->references('id')->on('admins');
             $table->timestamps();
         });
