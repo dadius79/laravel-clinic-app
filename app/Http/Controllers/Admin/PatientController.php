@@ -20,6 +20,16 @@ class PatientController extends BaseController
         return $this->sendResponse($patient, 'Patient Fetched.');
     }
 
+    public function find($id){
+        $patient = $this->patientRepository->findPatientById($id);
+        if(!$patient){
+            //Find Proper Error Reporting Feature
+            $error = 'Patient Not Found, Please Try Again';
+            return $this->sendError('Patient Find Error', $error);
+        }
+        return $this->sendResponse($patient, 'Patient Fetched Successfully');
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -27,10 +37,9 @@ class PatientController extends BaseController
             'date_of_birth' => 'required|date',
             'sex' => 'required|in:Male,Female',
             'national_status' => 'required|in:Citizen,Foreigner',
-            'national_id' => 'required|integer|unique:App\Models\Patient, national_id',
+            'national_id' => 'required|integer|unique:patients',
             'address' => 'required|string',
-            'phone_number' => 'required|min:10|max:10|unique:App\Models\Patient, phone_number',
-            'emergency_number' => 'integer|min:10|max:10',
+            'phone_number' => 'required|min:10|max:10|unique:patients',
             'registered_by' => 'required|integer'
         ]);
         
@@ -56,10 +65,9 @@ class PatientController extends BaseController
             'date_of_birth' => 'date',
             'sex' => 'in:Male,Female',
             'national_status' => 'in:Citizen,Foreigner',
-            'national_id' => 'integer|unique:App\Models\Patient, national_id',
+            'national_id' => 'integer|unique:patients',
             'address' => 'string',
-            'phone_number' => 'min:10|max:10|unique:App\Models\Patient, phone_number',
-            'emergency_number' => 'min:10|max:10',
+            'phone_number' => 'min:10|max:10|unique:patients',
             'registered_by' => 'integer'
         ]);
 
