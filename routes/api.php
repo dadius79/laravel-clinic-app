@@ -62,7 +62,7 @@ Route::prefix('admin')->group(function(){
             Route::get('/', 'App\Http\Controllers\Admin\PatientController@index');
             Route::post('/add', 'App\Http\Controllers\Admin\PatientController@store');
             Route::get('/find/{id}', 'App\Http\Controllers\Admin\PatientController@find');
-            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\PatientController@update');
+            Route::put('/edit/{id}', 'App\Http\Controllers\Admin\PatientController@update');
             Route::post('/delete/{id}', 'App\Http\Controllers\Admin\PatientController@delete');
         });
 

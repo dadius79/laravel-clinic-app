@@ -65,9 +65,9 @@ class PatientController extends BaseController
             'date_of_birth' => 'date',
             'sex' => 'in:Male,Female',
             'national_status' => 'in:Citizen,Foreigner',
-            'national_id' => 'integer|unique:patients',
+            'national_id' => 'integer',
             'address' => 'string',
-            'phone_number' => 'min:10|max:10|unique:patients',
+            'phone_number' => 'min:10|max:10',
             'registered_by' => 'integer'
         ]);
 
