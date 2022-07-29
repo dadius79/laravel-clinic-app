@@ -36,6 +36,13 @@ class BaseRepository implements BaseContract{
 
     }
 
+    public function allById(string $whereColumn, int $id, $columns = array('*'), string $orderBy = 'id', string $sortBy = 'asc')
+    {
+
+        return $this->model->where($whereColumn, $id)->orderBy($orderBy, $sortBy)->get($columns);
+
+    }
+
     public function find(int $id)
     {
 

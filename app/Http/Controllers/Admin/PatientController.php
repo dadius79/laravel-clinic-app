@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Contracts\PatientContract;
+use App\Models\Patient;
 
 class PatientController extends BaseController
 {
@@ -16,7 +18,12 @@ class PatientController extends BaseController
     }
 
     public function index(){
-        $patient = $this->patientRepository->listPatient();
+        $patient = DB::table('patients')
+            ->join('admins', 'patients.registered_by', '=', 'admins.id')
+            ->select('patients.*', 'admins.name as admin_name')
+            ->orderBy('id', 'asc')
+            ->get(['*']);
+        //$patient = $this->patientRepository->listPatient();
         return $this->sendResponse($patient, 'Patient Fetched.');
     }
 

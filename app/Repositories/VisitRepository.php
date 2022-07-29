@@ -20,6 +20,11 @@ class VisitRepository extends BaseRepository implements VisitContract
         return $this->all($columns, $order, $sort);
     }
 
+    public function listVisitsByPatientId(string $whereColumn = 'patient_id', int $id, array $columns = ['*'], string $order = 'id', string $sort = 'desc')
+    {
+        return $this->allById($whereColumn, $id, $columns, $order, $sort);
+    }
+
     public function findVisitById(int $id)
     {
         try{

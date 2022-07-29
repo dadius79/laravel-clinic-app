@@ -75,6 +75,7 @@ Route::prefix('admin')->group(function(){
 
         Route::prefix('visit')->group(function(){
             Route::get('/', 'App\Http\Controllers\Admin\VisitController@index');
+            Route::get('/patient-visits/{id}', 'App\Http\Controllers\Admin\VisitController@list');
             Route::post('/add', 'App\Http\Controllers\Admin\VisitController@store');
             Route::post('/edit/{id}', 'App\Http\Controllers\Admin\VisitController@update');
             Route::post('/delete/{id}', 'App\Http\Controllers\Admin\VisitController@delete');

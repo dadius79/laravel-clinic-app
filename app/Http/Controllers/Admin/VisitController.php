@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Contracts\VisitContract;
+use App\Models\Visit;
+use App\Models\Admin;
+use App\Models\Patient;
 
 class VisitController extends BaseController
 {
@@ -13,8 +17,25 @@ class VisitController extends BaseController
     }
 
     public function index(){
-        $visit = $this->visitRepository->listVisits();
-        return $this->sendResponse($visit, 'Visits Fetched Successfully.');
+        $visits = DB::table('visits')
+            ->join('patients', 'visits.patient_id', '=', 'patients.id')
+            ->join('admins', 'visits.doctor_id', '=', 'admins.id')
+            ->select('visits.*', 'patients.name as patient_name', 'admins.name as doctor_name')
+            ->orderBy('id', 'desc')
+            ->get(['*']);
+        //$visit = $this->visitRepository->listVisits();
+        return $this->sendResponse($visits, 'Visits Fetched Successfully.');
+    }
+
+    public function list($id){
+        $visits = DB::table('visits')
+            ->join('patients', 'visits.patient_id', '=', 'patients.id')
+            ->join('admins', 'visits.doctor_id', '=', 'admins.id')
+            ->select('visits.*', 'patients.name as patient_name', 'admins.name as doctor_name')
+            ->where('patient_id', $id)
+            ->orderBy('id', 'desc')
+            ->get(['*']);
+        return $this->sendResponse($visits, 'Patient Visits Fetched Successfully.');
     }
 
     public function store(Request $request){
