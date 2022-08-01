@@ -102,6 +102,14 @@ Route::prefix('admin')->group(function(){
             Route::post('/delete/{id}', 'App\Http\Controllers\Admin\BillingController@delete');
         });
 
+        Route::prefix('admins')->group(function() {
+            Route::get('/', 'App\Http\Controllers\Admin\AdminController@index');
+            Route::get('/role-admins/{id}', 'App\Http\Controllers\Admin\AdminController@list');
+            Route::post('/add', 'App\Http\Controllers\Admin\AdminController@store');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Admin\AdminController@update');
+            Route::post('/delete/{id}', 'App\Http\Controllers\Admin\AdminController@delete');
+        });
+
     });
 });
 
